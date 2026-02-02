@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h1>Admin Dashboard</h1>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Product</th>
+      <th>Package</th>
+      <th>Status</th>
+      <th>Mockup</th>
+    </tr>
+    <% orders.forEach(o => { %>
+      <tr>
+        <td><%= o.name %></td>
+        <td><%= o.email %></td>
+        <td><%= o.product %></td>
+        <td><%= o.packageType %></td>
+        <td><%= o.status %></td>
+        <td>
+          <% if(o.mockupPath){ %>
+            <img src="/uploads/<%= o.mockupPath %>" width="100">
+          <% } else { %>
+            N/A
+          <% } %>
+        </td>
+      </tr>
+    <% }) %>
+  </table>
+</body>
+</html>
