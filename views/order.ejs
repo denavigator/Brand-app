@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Place Order</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h1>Brand Your Product</h1>
+  <form action="/checkout" method="POST" enctype="multipart/form-data">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <input type="text" name="product" placeholder="Product Name/Info" required>
+    <select name="packageType">
+      <option value="starter" <%= selectedPackage==='starter'?'selected':'' %>>Starter</option>
+      <option value="pro" <%= selectedPackage==='pro'?'selected':'' %>>Pro</option>
+      <option value="premium" <%= selectedPackage==='premium'?'selected':'' %>>Premium</option>
+    </select>
+    <label>Upload Logo (optional)</label>
+    <input type="file" name="logo" accept="image/*">
+    <button type="submit">Proceed to Payment</button>
+  </form>
+</body>
+</html>
